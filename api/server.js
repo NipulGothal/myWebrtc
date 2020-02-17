@@ -14,7 +14,7 @@ app.use('/scripts', express.static(`${__dirname}/node_modules/`));
 const dir = path.join(__dirname, '../');
 app.use((req, res) => res.sendFile(`${dir}/public/index.html`));
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
   // eslint-disable-next-line no-console
-  console.info('listening on %d', port);
+  console.info('listening on %d', process.env.PORT);
 });
